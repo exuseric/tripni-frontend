@@ -1,0 +1,289 @@
+@import "tailwindcss";
+@import "./theme.css";
+@import "./animations.css";
+@import "./buttons.css";
+@import "tw-animate-css";
+
+@plugin "tailwindcss-react-aria-components";
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+/*noinspection CssUnresolvedCustomProperty*/
+@theme inline {
+    --font-heading: var(--font-family-heading);
+    --font-body: var(--font-family-body);
+
+    /* Primary Colors */
+    --color-primary: var(--md-sys-color-primary);
+    --color-on-primary: var(--md-sys-color-on-primary);
+    --color-primary-container: var(--md-sys-color-primary-container);
+    --color-on-primary-container: var(--md-sys-color-on-primary-container);
+    --color-primary-fixed: var(--md-sys-color-primary-fixed);
+    --color-on-primary-fixed: var(--md-sys-color-on-primary-fixed);
+    --color-primary-fixed-dim: var(--md-sys-color-primary-fixed-dim);
+    --color-on-primary-fixed-variant: var(--md-sys-color-on-primary-fixed-variant);
+    --color-inverse-primary: var(--md-sys-color-inverse-primary);
+
+    /* Secondary Colors */
+    --color-secondary: var(--md-sys-color-secondary);
+    --color-on-secondary: var(--md-sys-color-on-secondary);
+    --color-secondary-container: var(--md-sys-color-secondary-container);
+    --color-on-secondary-container: var(--md-sys-color-on-secondary-container);
+    --color-secondary-fixed: var(--md-sys-color-secondary-fixed);
+    --color-on-secondary-fixed: var(--md-sys-color-on-secondary-fixed);
+    --color-secondary-fixed-dim: var(--md-sys-color-secondary-fixed-dim);
+    --color-on-secondary-fixed-variant: var(--md-sys-color-on-secondary-fixed-variant);
+
+    /* Tertiary Colors */
+    --color-tertiary: var(--md-sys-color-tertiary);
+    --color-on-tertiary: var(--md-sys-color-on-tertiary);
+    --color-tertiary-container: var(--md-sys-color-tertiary-container);
+    --color-on-tertiary-container: var(--md-sys-color-on-tertiary-container);
+    --color-tertiary-fixed: var(--md-sys-color-tertiary-fixed);
+    --color-on-tertiary-fixed: var(--md-sys-color-on-tertiary-fixed);
+    --color-tertiary-fixed-dim: var(--md-sys-color-tertiary-fixed-dim);
+    --color-on-tertiary-fixed-variant: var(--md-sys-color-on-tertiary-fixed-variant);
+
+    /* Error Colors */
+    --color-error: var(--md-sys-color-error);
+    --color-on-error: var(--md-sys-color-on-error);
+    --color-error-container: var(--md-sys-color-error-container);
+    --color-on-error-container: var(--md-sys-color-on-error-container);
+
+    /* Surface Colors */
+    --color-surface: var(--md-sys-color-surface);
+    --color-surface-dim: var(--md-sys-color-surface-dim);
+    --color-surface-bright: var(--md-sys-color-surface-bright);
+    --color-surface-container-lowest: var(--md-sys-color-surface-container-lowest);
+    --color-surface-container-low: var(--md-sys-color-surface-container-low);
+    --color-surface-container: var(--md-sys-color-surface-container);
+    --color-surface-container-high: var(--md-sys-color-surface-container-high);
+    --color-surface-container-highest: var(--md-sys-color-surface-container-highest);
+    --color-on-surface: var(--md-sys-color-on-surface);
+    --color-surface-variant: var(--md-sys-color-surface-variant);
+    --color-on-surface-variant: var(--md-sys-color-on-surface-variant);
+    --color-inverse-surface: var(--md-sys-color-inverse-surface);
+    --color-inverse-on-surface: var(--md-sys-color-inverse-on-surface);
+
+    /* Background Colors */
+    --color-background: var(--md-sys-color-background);
+    --color-on-background: var(--md-sys-color-on-background);
+
+    /* Utility Colors */
+    --color-outline: var(--md-sys-color-outline);
+    --color-outline-variant: var(--md-sys-color-outline-variant);
+    --color-shadow: var(--md-sys-color-shadow);
+    --color-scrim: var(--md-sys-color-scrim);
+    --color-surface-tint: var(--md-sys-color-surface-tint);
+
+    /* Box Shadow Utilities */
+    --shadow-sm: var(--shadow-level-1);
+    --shadow: var(--shadow-level-2);
+    --shadow-md: var(--shadow-level-3);
+    --shadow-lg: var(--shadow-level-4);
+    --shadow-xl: var(--shadow-level-5);
+    --shadow-2xl: var(--shadow-level-5);
+
+    /* Transition Duration */
+    --transition-duration-75: var(--duration-short-1);
+    --transition-duration-100: var(--duration-short-2);
+    --transition-duration-150: var(--duration-short-3);
+    --transition-duration-200: var(--duration-short-4);
+    --transition-duration-300: var(--duration-medium-2);
+    --transition-duration-500: var(--duration-long-2);
+    --transition-duration-700: var(--duration-extra-long-1);
+    --transition-duration-1000: var(--duration-extra-long-4);
+
+    /* Transition Timing Function */
+    --transition-timing-function-linear: var(--easing-linear);
+    --transition-timing-function-in: var(--easing-standard-accelerate);
+    --transition-timing-function-out: var(--easing-standard-decelerate);
+    --transition-timing-function-in-out: var(--easing-standard);
+
+    --ease-transition-linear: var(--easing-linear);
+    --ease-transition-in: var(--easing-standard-accelerate);
+    --ease-transition-out: var(--easing-standard-decelerate);
+    --ease-transition-in-out: var(--easing-standard);
+
+    /* Animation Duration */
+    --animation-duration-75: var(--duration-short-1);
+    --animation-duration-100: var(--duration-short-2);
+    --animation-duration-150: var(--duration-short-3);
+    --animation-duration-200: var(--duration-short-4);
+    --animation-duration-300: var(--duration-medium-2);
+    --animation-duration-500: var(--duration-long-2);
+    --animation-duration-700: var(--duration-extra-long-1);
+    --animation-duration-1000: var(--duration-extra-long-4);
+
+    /* Animation Timing Function */
+    --ease-animation-linear: var(--easing-linear);
+    --ease-animation-in: var(--easing-emphasized-accelerate);
+    --ease-animation-out: var(--easing-emphasized-decelerate);
+    --ease-animation-in-out: var(--easing-emphasized);
+
+    --spacing-container-block: theme("spacing.24");
+    --spacing-container-block-sm: theme("spacing.12");
+    --spacing-nav-height: theme("spacing.16");
+    --spacing-topbar-height: theme("spacing.16");
+    --spacing-safe-bottom: calc(0.2em + env(safe-area-inset-bottom, theme("spacing.4")));
+    --spacing-safe-top: calc(1em + env(safe-area-inset-top, theme("spacing.4")));
+    /* Elevation Level 0 - No elevation */
+    --shadow-level-0: none;
+
+    /* Elevation Level 1 - 1dp (e.g., cards at rest) */
+    --shadow-level-1: 0px 1px 2px 0px rgb(var(--color-shadow) / 0.3), 0px 1px 3px 1px rgb(var(--color-shadow) / 0.15);
+
+    /* Elevation Level 2 - 3dp (e.g., buttons, FAB at rest) */
+    --shadow-level-2: 0px 1px 2px 0px rgb(var(--color-shadow) / 0.3), 0px 2px 6px 2px rgb(var(--color-shadow) / 0.15);
+
+    /* Elevation Level 3 - 6dp (e.g., cards on hover, menus) */
+    --shadow-level-3: 0px 1px 3px 0px rgb(var(--color-shadow) / 0.3), 0px 4px 8px 3px rgb(var(--color-shadow) / 0.15);
+
+    /* Elevation Level 4 - 8dp (e.g., dialogs) */
+    --shadow-level-4: 0px 2px 3px 0px rgb(var(--color-shadow) / 0.3), 0px 6px 10px 4px rgb(var(--color-shadow) / 0.15);
+
+    /* Elevation Level 5 - 12dp (e.g., navigation drawer) */
+    --shadow-level-5: 0px 4px 4px 0px rgb(var(--color-shadow) / 0.3), 0px 8px 12px 6px rgb(var(--color-shadow) / 0.15);
+
+    --radius-card: theme("spacing.2");
+    --radius-card-md: theme("spacing.4");
+    --radius-card-lg: theme("spacing.6");
+    --font-mono: var(--font-mono);
+
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+    --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+body {
+    @apply bg-surface text-on-surface font-body;
+}
+
+a,
+button {
+    @apply cursor-pointer;
+}
+
+/* Container Utilities */
+@utility container {
+    @apply w-full max-w-7xl mx-auto px-4;
+}
+
+@utility container-grid {
+    @apply small-screen-grid sm:large-screen-grid;
+}
+
+@utility container-sm {
+    @apply max-w-3xl mx-auto px-4;
+}
+
+@utility container-md {
+    @apply max-w-5xl mx-auto px-4;
+}
+
+@utility container-xl {
+    @apply max-w-[1400px] mx-auto px-4;
+}
+
+@utility container-fluid {
+    @apply max-w-full mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/*Container Grids*/
+@utility small-screen-grid {
+    @apply grid grid-cols-[repeat(4,minmax(4.4rem,6rem))] auto-rows-max gap-4;
+}
+
+@utility large-screen-grid {
+    @apply grid grid-cols-[repeat(12,minmax(4.4rem,5.25rem))] auto-rows-max gap-6;
+}
+
+/* Flexbox Row Utilities */
+@utility flex-row-between {
+    @apply flex flex-row justify-between;
+}
+
+@utility flex-row-start {
+    @apply flex flex-row justify-start;
+}
+
+@utility flex-row-end {
+    @apply flex flex-row justify-end;
+}
+
+@utility flex-row-center {
+    @apply flex flex-row justify-center;
+}
+
+/* Flexbox Column Utilities */
+@utility flex-col-between {
+    @apply flex flex-col justify-between;
+}
+
+@utility flex-col-start {
+    @apply flex flex-col justify-start;
+}
+
+@utility flex-col-end {
+    @apply flex flex-col justify-end;
+}
+
+@utility flex-col-center {
+    @apply flex flex-col justify-center;
+}
+
+/* Flex Center Variants */
+@utility flex-center {
+    @apply flex items-center justify-center;
+}
+
+@utility flex-center-col {
+    @apply flex flex-col items-center justify-center;
+}
+
+/* Flex Alignment Utilities */
+@utility items-between {
+    @apply flex items-center justify-between;
+}
+
+@utility items-center-start {
+    @apply flex items-center justify-start;
+}
+
+@utility items-center-end {
+    @apply flex items-center justify-end;
+}
+
+/* Flex with Gap */
+@utility flex-gap-2 {
+    @apply flex gap-2;
+}
+
+@utility flex-gap-4 {
+    @apply flex gap-4;
+}
+
+@utility glass {
+    @apply backdrop-blur-3xl bg-surface-container-high/10 ring ring-primary/10 ring-inset;
+
+    @supports not (backdrop-filter: blur(1px)) {
+        @apply bg-surface-container-high ring ring-primary/10 ring-inset;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-outline-variant outline-primary/50;
+    }
+    body {
+        @apply bg-surface text-on-surface;
+    }
+    html {
+        @apply font-mono;
+    }
+}

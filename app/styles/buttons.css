@@ -1,0 +1,212 @@
+@reference "tailwindcss";
+
+@utility btn {
+    @apply relative flex-row-center items-center font-medium text-base leading-5 tracking-[0.00625rem] rounded-4xl min-w-[4.7rem] w-fit min-h-11 h-fit cursor-pointer select-none whitespace-nowrap duration-200 ease-in-out leading-1;
+
+    &:active {
+        @apply scale-98;
+    }
+
+    &:disabled {
+        @apply opacity-38 cursor-not-allowed pointer-events-none;
+    }
+
+    &:focus-visible {
+        @apply outline-2 outline-offset-2;
+    }
+}
+
+@utility btn-icon-base {
+    @apply inline-flex items-center justify-center
+           p-2 text-2xl rounded-full
+           cursor-pointer select-none size-10
+           duration-200 ease-in-out;
+
+    &:active {
+        @apply scale-95;
+    }
+
+    &:disabled {
+        @apply opacity-38 cursor-not-allowed pointer-events-none;
+    }
+
+    &:focus-visible {
+        @apply outline-2 outline-offset-2;
+    }
+}
+
+@utility btn-filled {
+    @apply btn gap-2 px-6 py-2.5 border-none bg-primary-container text-on-primary-container shadow-level-0 transition-[background-color,box-shadow,transform];
+
+    &:hover {
+        @apply shadow-level-1 bg-[color-mix(in_srgb,var(--color-on-primary)_8%,var(--color-primary))];
+    }
+
+    &:focus-visible {
+        @apply outline-primary bg-[color-mix(in_srgb,var(--color-on-primary)_12%,var(--color-primary))];
+    }
+
+    &:active {
+        @apply shadow-level-0 bg-[color-mix(in_srgb,var(--color-on-primary)_12%,var(--color-primary))];
+    }
+}
+
+@utility btn-filled-tonal {
+    @apply btn gap-2 px-6 py-1.5 border-none bg-primary-fixed text-on-primary-fixed shadow-level-0 transition-[background-color,box-shadow,transform];
+
+    &:hover {
+        @apply shadow-level-1 bg-[color-mix(in_srgb,var(--color-on-secondary-container)_8%,var(--color-secondary-container))];
+    }
+
+    &:focus-visible {
+        @apply outline-secondary bg-[color-mix(in_srgb,var(--color-on-secondary-container)_12%,var(--color-secondary-container))];
+    }
+
+    &:active {
+        @apply shadow-level-0 bg-[color-mix(in_srgb,var(--color-on-secondary-container)_12%,var(--color-secondary-container))];
+    }
+}
+
+@utility btn-outlined {
+    @apply btn gap-2 px-6 py-2.5 border border-outline bg-transparent text-primary transition-[background-color,border-color,transform];
+
+    &:hover {
+        @apply border-outline bg-[color-mix(in_srgb,var(--color-primary)_8%,transparent)];
+    }
+
+    &:focus-visible {
+        @apply outline-primary border-primary bg-[color-mix(in_srgb,var(--color-primary)_12%,transparent)];
+    }
+
+    &:active {
+        @apply bg-[color-mix(in_srgb,var(--color-primary)_12%,transparent)];
+    }
+}
+
+@utility btn-text {
+    @apply btn gap-x-2 gap-y-1 px-4 py-2.5 border-none bg-transparent text-on-surface transition-[background-color,transform,color];
+
+    &:hover {
+        @apply bg-[color-mix(in_srgb,var(--color-primary)_8%,transparent)];
+    }
+
+    &:focus-visible {
+        @apply outline-primary bg-[color-mix(in_srgb,var(--color-primary)_12%,transparent)];
+    }
+
+    &:active {
+        @apply bg-[color-mix(in_srgb,var(--color-primary)_12%,transparent)];
+    }
+}
+
+/* ============================================
+   ICON BUTTON UTILITIES
+   ============================================ */
+
+@utility btn-icon {
+    @apply btn-icon-base border-none bg-transparent text-on-surface-variant transition-[background-color,transform];
+
+    &:hover {
+        @apply bg-[color-mix(in_srgb,var(--color-on-surface-variant)_8%,transparent)];
+    }
+
+    &:focus-visible {
+        @apply outline-primary bg-[color-mix(in_srgb,var(--color-on-surface-variant)_12%,transparent)];
+    }
+
+    &:active {
+        @apply bg-[color-mix(in_srgb,var(--color-on-surface-variant)_12%,transparent)];
+    }
+}
+
+@utility btn-icon-filled {
+    @apply btn-icon-base border-none bg-primary text-on-primary transition-[background-color,transform];
+
+    &:hover {
+        @apply bg-[color-mix(in_srgb,var(--color-on-primary)_8%,var(--color-primary))];
+    }
+
+    &:focus-visible {
+        @apply outline-primary bg-[color-mix(in_srgb,var(--color-on-primary)_12%,var(--color-primary))];
+    }
+
+    &:active {
+        @apply bg-[color-mix(in_srgb,var(--color-on-primary)_12%,var(--color-primary))];
+    }
+}
+
+@utility btn-icon-filled-tonal {
+    @apply btn-icon-base border-none bg-secondary-container text-on-secondary-container transition-[background-color,transform];
+
+    &:hover {
+        @apply bg-[color-mix(in_srgb,var(--color-on-secondary-container)_8%,var(--color-secondary-container))];
+    }
+
+    &:focus-visible {
+        @apply outline-secondary bg-[color-mix(in_srgb,var(--color-on-secondary-container)_12%,var(--color-secondary-container))];
+    }
+
+    &:active {
+        @apply bg-[color-mix(in_srgb,var(--color-on-secondary-container)_12%,var(--color-secondary-container))];
+    }
+}
+
+@utility btn-icon-outlined {
+    @apply btn-icon-base border border-outline bg-transparent text-on-surface-variant transition-[background-color,border-color,transform];
+
+    &:hover {
+        @apply bg-[color-mix(in_srgb,var(--color-on-surface-variant)_8%,transparent)];
+    }
+
+    &:focus-visible {
+        @apply outline-primary border-primary bg-[color-mix(in_srgb,var(--color-on-surface-variant)_12%,transparent)];
+    }
+
+    &:active {
+        @apply bg-[color-mix(in_srgb,var(--color-on-surface-variant)_12%,transparent)];
+    }
+}
+
+@utility btn-icon-danger {
+    @apply btn-icon-base border-none bg-error text-on-error transition-[background-color,transform];
+
+    &:hover {
+        @apply bg-[color-mix(in_srgb,var(--color-on-error)_8%,var(--color-error))];
+    }
+
+    &:focus-visible {
+        @apply outline-error bg-[color-mix(in_srgb,var(--color-on-error)_12%,var(--color-error))];
+    }
+
+    &:active {
+        @apply bg-[color-mix(in_srgb,var(--color-on-error)_12%,var(--color-error))];
+    }
+}
+
+/* ============================================
+   CRUD TEST PANEL UTILITIES
+   ============================================ */
+
+@utility btn-sm {
+    @apply px-3 py-1.5 text-xs min-w-8;
+}
+
+@utility btn-danger {
+    @apply btn gap-2 px-6 py-2.5 border-none bg-error text-on-error shadow-level-0 transition-[background-color,box-shadow,transform];
+
+    &:hover {
+        @apply shadow-level-1 bg-[color-mix(in_srgb,var(--color-on-error)_8%,var(--color-error))];
+    }
+
+    &:focus-visible {
+        @apply outline-error bg-[color-mix(in_srgb,var(--color-on-error)_12%,var(--color-error))];
+    }
+
+    &:active {
+        @apply shadow-level-0 bg-[color-mix(in_srgb,var(--color-on-error)_12%,var(--color-error))];
+    }
+}
+
+@utility input {
+    @apply block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary sm:text-sm;
+}
