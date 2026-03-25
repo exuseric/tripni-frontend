@@ -10,18 +10,22 @@ interface LinkProps extends AriaLinkProps {
 
 const styles = tv({
   extend: focusRing,
-  base: 'underline disabled:no-underline disabled:cursor-default forced-colors:disabled:text-[GrayText] transition rounded-xs [-webkit-tap-highlight-color:transparent]',
+  base: 'btn [-webkit-tap-highlight-color:transparent]',
   variants: {
     variant: {
-      primary: 'text-primary underline decoration-primary/60 hover:decoration-primary',
-      secondary: 'text-on-surface underline decoration-on-surface/50 hover:decoration-on-surface'
+      // primary: 'text-primary underline decoration-primary/60 hover:decoration-primary',
+      // secondary: 'text-on-surface underline decoration-on-surface/50 hover:decoration-on-surface',
+      primary: 'btn-filled',
+      secondary: 'btn-filled-tonal',
+      destructive: 'btn-destructive',
+      quiet: 'btn-text'
     }
   },
   defaultVariants: {
-    variant: 'primary'
+    variant: 'quiet'
   }
 });
 
 export function Link(props: LinkProps) {
-  return <AriaLink {...props} className={composeRenderProps(props.className, (className, renderProps) =>  styles({...renderProps, className, variant: props.variant}))} />;
+  return <AriaLink {...props} className={composeRenderProps(props.className, (className, renderProps) => styles({ ...renderProps, className, variant: props.variant }))} />;
 }

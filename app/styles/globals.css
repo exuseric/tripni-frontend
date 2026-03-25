@@ -13,6 +13,7 @@
 @theme inline {
     --font-heading: var(--font-family-heading);
     --font-body: var(--font-family-body);
+    --font-display: var(--font-family-display);
 
     /* Primary Colors */
     --color-primary: var(--md-sys-color-primary);
@@ -128,6 +129,12 @@
     --spacing-topbar-height: theme("spacing.16");
     --spacing-safe-bottom: calc(0.2em + env(safe-area-inset-bottom, theme("spacing.4")));
     --spacing-safe-top: calc(1em + env(safe-area-inset-top, theme("spacing.4")));
+
+    --text-heading-large: theme("spacing.12");
+    --text-heading-medium: theme("spacing.8");
+    --text-heading-small: theme("spacing.5");
+    --text-heading-xsmall: theme("spacing.4");
+
     /* Elevation Level 0 - No elevation */
     --shadow-level-0: none;
 
@@ -149,7 +156,6 @@
     --radius-card: theme("spacing.2");
     --radius-card-md: theme("spacing.4");
     --radius-card-lg: theme("spacing.6");
-    --font-mono: var(--font-mono);
 
     --radius-sm: calc(var(--radius) * 0.6);
     --radius-md: calc(var(--radius) * 0.8);
@@ -160,8 +166,9 @@
     --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-body {
-    @apply bg-surface text-on-surface font-body;
+body,
+html {
+    @apply bg-background text-on-background font-body antialiased h-full scroll-smooth;
 }
 
 a,

@@ -1,0 +1,520 @@
+@reference "tailwindcss"
+
+
+/* Fade */
+@utility animate-fade-in {
+    animation: fade-in var(--duration-medium-2) var(--easing-standard-decelerate);
+}
+@utility animate-fade-out {
+    animation: fade-out var(--duration-short-4) var(--easing-standard-accelerate);
+}
+/* Scale */
+@utility animate-scale-in {
+    animation: scale-in var(--duration-medium-2) var(--easing-emphasized-decelerate);
+}
+@utility animate-scale-out {
+    animation: scale-out var(--duration-short-4) var(--easing-emphasized-accelerate);
+}
+@utility animate-scale-up-in {
+    animation: scale-up-in var(--duration-medium-4) var(--easing-emphasized-decelerate);
+}
+@utility animate-scale-up-out {
+    animation: scale-up-out var(--duration-medium-1) var(--easing-emphasized-accelerate);
+}
+
+/* Slide */
+@utility animate-slide-in-bottom {
+    animation: slide-in-bottom var(--duration-medium-4) var(--easing-emphasized-decelerate);
+}
+@utility animate-slide-out-bottom {
+    animation: slide-out-bottom var(--duration-medium-2) var(--easing-emphasized-accelerate);
+}
+@utility animate-slide-in-top {
+    animation: slide-in-top var(--duration-medium-4) var(--easing-emphasized-decelerate);
+}
+@utility animate-slide-out-top {
+    animation: slide-out-top var(--duration-medium-2) var(--easing-emphasized-accelerate);
+}
+@utility animate-slide-in-left {
+    animation: slide-in-left var(--duration-medium-4) var(--easing-emphasized-decelerate);
+}
+@utility animate-slide-out-left {
+    animation: slide-out-left var(--duration-medium-2) var(--easing-emphasized-accelerate);
+}
+@utility animate-slide-in-right {
+    animation: slide-in-right var(--duration-medium-4) var(--easing-emphasized-decelerate);
+}
+@utility animate-slide-out-right {
+    animation: slide-out-right var(--duration-medium-2) var(--easing-emphasized-accelerate);
+}
+
+/* Slide Fade */
+@utility animate-slide-fade-in-top {
+    animation: slide-fade-in-top var(--duration-medium-2) var(--easing-standard-decelerate);
+}
+@utility animate-slide-fade-out-top {
+    animation: slide-fade-out-top var(--duration-short-4) var(--easing-standard-accelerate);
+}
+@utility animate-slide-fade-in-bottom {
+    animation: slide-fade-in-bottom var(--duration-medium-2) var(--easing-standard-decelerate);
+}
+@utility animate-slide-fade-out-bottom {
+    animation: slide-fade-out-bottom var(--duration-short-4) var(--easing-standard-accelerate);
+}
+
+/* Expand */
+@utility animate-expand-in {
+    animation: expand-in var(--duration-medium-3) var(--easing-emphasized-decelerate);
+}
+@utility animate-expand-out {
+    animation: expand-out var(--duration-medium-1) var(--easing-emphasized-accelerate);
+}
+
+/* Zoom */
+@utility animate-zoom-in {
+    animation: zoom-in var(--duration-medium-4) var(--easing-emphasized-decelerate);
+}
+@utility animate-zoom-out {
+    animation: zoom-out var(--duration-medium-2) var(--easing-emphasized-accelerate);
+}
+
+/* Bounce */
+@utility animate-bounce-in {
+    animation: bounce-in var(--duration-long-2) var(--easing-emphasized-decelerate);
+}
+@utility animate-bounce-out {
+    animation: bounce-out var(--duration-medium-4) var(--easing-emphasized-accelerate);
+}
+
+/* Flip */
+@utility animate-flip-in-x {
+    animation: flip-in-x var(--duration-medium-4) var(--easing-emphasized-decelerate);
+}
+@utility animate-flip-out-x {
+    animation: flip-out-x var(--duration-medium-2) var(--easing-emphasized-accelerate);
+}
+@utility animate-flip-in-y {
+    animation: flip-in-y var(--duration-medium-4) var(--easing-emphasized-decelerate);
+}
+@utility animate-flip-out-y {
+    animation: flip-out-y var(--duration-medium-2) var(--easing-emphasized-accelerate);
+}
+
+/* Rotate */
+@utility animate-spin {
+    animation: spin var(--duration-extra-long-2) var(--easing-linear) infinite;
+}
+@utility animate-spin-reverse {
+    animation: spin-reverse var(--duration-extra-long-2) var(--easing-linear) infinite;
+}
+
+/* Effects */
+@utility animate-shimmer {
+    animation: shimmer var(--duration-extra-long-4) var(--easing-linear) infinite;
+}
+@utility animate-pulse {
+    animation: pulse var(--duration-extra-long-1) var(--easing-standard) infinite;
+}
+@utility animate-shake {
+    animation: shake var(--duration-long-2) var(--easing-standard);
+}
+@utility animate-wiggle {
+    animation: wiggle var(--duration-long-2) var(--easing-standard);
+}
+
+/* FADE ANIMATIONS */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* SCALE ANIMATIONS */
+@keyframes scale-in {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes scale-out {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+}
+
+/* SCALE UP (for dialogs/modals) */
+@keyframes scale-up-in {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes scale-up-out {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
+
+/* SLIDE ANIMATIONS - FROM BOTTOM (sheets, snackbars) */
+@keyframes slide-in-bottom {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-out-bottom {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+}
+
+/* SLIDE ANIMATIONS - FROM TOP (dropdowns, notifications) */
+@keyframes slide-in-top {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-out-top {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+}
+
+/* SLIDE ANIMATIONS - FROM LEFT (navigation drawers) */
+@keyframes slide-in-left {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-out-left {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}
+
+/* SLIDE ANIMATIONS - FROM RIGHT (side sheets, navigation) */
+@keyframes slide-in-right {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-out-right {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+/* SLIDE AND FADE (menus, dropdowns) */
+@keyframes slide-fade-in-top {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-fade-out-top {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes slide-fade-in-bottom {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-fade-out-bottom {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+}
+
+/* EXPAND ANIMATIONS (accordions, collapsibles) */
+@keyframes expand-in {
+    from {
+        opacity: 0;
+        transform: scaleY(0);
+        transform-origin: top;
+    }
+    to {
+        opacity: 1;
+        transform: scaleY(1);
+        transform-origin: top;
+    }
+}
+
+@keyframes expand-out {
+    from {
+        opacity: 1;
+        transform: scaleY(1);
+        transform-origin: top;
+    }
+    to {
+        opacity: 0;
+        transform: scaleY(0);
+        transform-origin: top;
+    }
+}
+
+/* ZOOM ANIMATIONS (image viewers, focus effects) */
+@keyframes zoom-in {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes zoom-out {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+/* BOUNCE ANIMATIONS (attention-grabbing elements) */
+@keyframes bounce-in {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes bounce-out {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(0.95);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+}
+
+/* FLIP ANIMATIONS (card flips, reveals) */
+@keyframes flip-in-x {
+    from {
+        opacity: 0;
+        transform: perspective(1000px) rotateX(-90deg);
+    }
+    to {
+        opacity: 1;
+        transform: perspective(1000px) rotateX(0deg);
+    }
+}
+
+@keyframes flip-out-x {
+    from {
+        opacity: 1;
+        transform: perspective(1000px) rotateX(0deg);
+    }
+    to {
+        opacity: 0;
+        transform: perspective(1000px) rotateX(90deg);
+    }
+}
+
+@keyframes flip-in-y {
+    from {
+        opacity: 0;
+        transform: perspective(1000px) rotateY(-90deg);
+    }
+    to {
+        opacity: 1;
+        transform: perspective(1000px) rotateY(0deg);
+    }
+}
+
+@keyframes flip-out-y {
+    from {
+        opacity: 1;
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    to {
+        opacity: 0;
+        transform: perspective(1000px) rotateY(90deg);
+    }
+}
+
+/* ROTATE ANIMATIONS (loading indicators, attention) */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin-reverse {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+/* SHIMMER ANIMATION (loading skeletons) */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+/* PULSE ANIMATION (loading, attention) */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* SHAKE ANIMATION (error feedback) */
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-4px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(4px);
+    }
+}
+
+/* WIGGLE ANIMATION (playful attention) */
+@keyframes wiggle {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-3deg);
+    }
+    75% {
+        transform: rotate(3deg);
+    }
+}
