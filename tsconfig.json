@@ -35,6 +35,12 @@
     "paths": {
       "@/*": [
         "./*"
+      ],
+      "@constants/*": [
+        "./lib/constants/*"
+      ],
+      "@utils/*": [
+        "./lib/utils/*"
       ]
     }
   },
