@@ -1,12 +1,5 @@
 @reference "tailwindcss";
 
-:root {
-  /* Emil-approved custom curves */
-  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
-  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
-  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
-}
-
 /* Reveal Stagger Utilities */
 @utility animate-reveal {
   opacity: 1;
@@ -36,101 +29,102 @@
 
 /* Fade */
 @utility animate-fade-in {
-  animation: fade-in var(--duration-medium-2) var(--easing-standard-decelerate);
+  animation: fade-in var(--duration-short-4) var(--ease-out);
 }
 @utility animate-fade-out {
-  animation: fade-out var(--duration-short-4) var(--easing-standard-accelerate);
+  animation: fade-out var(--duration-short-3) var(--ease-out);
 }
+
 /* Scale */
 @utility animate-scale-in {
-  animation: scale-in var(--duration-medium-2) var(--easing-emphasized-decelerate);
+  animation: scale-in var(--duration-short-4) var(--ease-out);
 }
 @utility animate-scale-out {
-  animation: scale-out var(--duration-short-4) var(--easing-emphasized-accelerate);
+  animation: scale-out var(--duration-short-3) var(--ease-out);
 }
 @utility animate-scale-up-in {
-  animation: scale-up-in var(--duration-medium-4) var(--easing-emphasized-decelerate);
+  animation: scale-up-in var(--duration-medium-2) var(--ease-out);
 }
 @utility animate-scale-up-out {
-  animation: scale-up-out var(--duration-medium-1) var(--easing-emphasized-accelerate);
+  animation: scale-up-out var(--duration-short-4) var(--ease-out);
 }
 
 /* Slide */
 @utility animate-slide-in-bottom {
-  animation: slide-in-bottom var(--duration-medium-4) var(--easing-emphasized-decelerate);
+  animation: slide-in-bottom var(--duration-medium-2) var(--ease-drawer);
 }
 @utility animate-slide-out-bottom {
-  animation: slide-out-bottom var(--duration-medium-2) var(--easing-emphasized-accelerate);
+  animation: slide-out-bottom var(--duration-short-4) var(--ease-drawer);
 }
 @utility animate-slide-in-top {
-  animation: slide-in-top var(--duration-medium-4) var(--easing-emphasized-decelerate);
+  animation: slide-in-top var(--duration-medium-2) var(--ease-drawer);
 }
 @utility animate-slide-out-top {
-  animation: slide-out-top var(--duration-medium-2) var(--easing-emphasized-accelerate);
+  animation: slide-out-top var(--duration-short-4) var(--ease-drawer);
 }
 @utility animate-slide-in-left {
-  animation: slide-in-left var(--duration-medium-4) var(--easing-emphasized-decelerate);
+  animation: slide-in-left var(--duration-medium-2) var(--ease-drawer);
 }
 @utility animate-slide-out-left {
-  animation: slide-out-left var(--duration-medium-2) var(--easing-emphasized-accelerate);
+  animation: slide-out-left var(--duration-short-4) var(--ease-drawer);
 }
 @utility animate-slide-in-right {
-  animation: slide-in-right var(--duration-medium-4) var(--easing-emphasized-decelerate);
+  animation: slide-in-right var(--duration-medium-2) var(--ease-drawer);
 }
 @utility animate-slide-out-right {
-  animation: slide-out-right var(--duration-medium-2) var(--easing-emphasized-accelerate);
+  animation: slide-out-right var(--duration-short-4) var(--ease-drawer);
 }
 
 /* Slide Fade */
 @utility animate-slide-fade-in-top {
-  animation: slide-fade-in-top var(--duration-medium-2) var(--easing-standard-decelerate);
+  animation: slide-fade-in-top var(--duration-short-4) var(--ease-out);
 }
 @utility animate-slide-fade-out-top {
-  animation: slide-fade-out-top var(--duration-short-4) var(--easing-standard-accelerate);
+  animation: slide-fade-out-top var(--duration-short-3) var(--ease-out);
 }
 @utility animate-slide-fade-in-bottom {
-  animation: slide-fade-in-bottom var(--duration-medium-2) var(--easing-standard-decelerate);
+  animation: slide-fade-in-bottom var(--duration-short-4) var(--ease-out);
 }
 @utility animate-slide-fade-out-bottom {
-  animation: slide-fade-out-bottom var(--duration-short-4) var(--easing-standard-accelerate);
+  animation: slide-fade-out-bottom var(--duration-short-3) var(--ease-out);
 }
 
 /* Expand */
 @utility animate-expand-in {
-  animation: expand-in var(--duration-medium-3) var(--easing-emphasized-decelerate);
+  animation: expand-in var(--duration-medium-2) var(--ease-out);
 }
 @utility animate-expand-out {
-  animation: expand-out var(--duration-medium-1) var(--easing-emphasized-accelerate);
+  animation: expand-out var(--duration-short-4) var(--ease-out);
 }
 
 /* Zoom */
 @utility animate-zoom-in {
-  animation: zoom-in var(--duration-medium-4) var(--easing-emphasized-decelerate);
+  animation: zoom-in var(--duration-medium-2) var(--ease-out);
 }
 @utility animate-zoom-out {
-  animation: zoom-out var(--duration-medium-2) var(--easing-emphasized-accelerate);
+  animation: zoom-out var(--duration-short-4) var(--ease-out);
 }
 
 /* Bounce */
 @utility animate-bounce-in {
-  animation: bounce-in var(--duration-long-2) var(--easing-emphasized-decelerate);
+  animation: bounce-in var(--duration-medium-4) var(--ease-out);
 }
 @utility animate-bounce-out {
-  animation: bounce-out var(--duration-medium-4) var(--easing-emphasized-accelerate);
+  animation: bounce-out var(--duration-medium-2) var(--ease-out);
 }
 
 /* Flip */
 @utility animate-flip-in-x {
-  animation: flip-in-x var(--duration-medium-4) var(--easing-emphasized-decelerate);
+  animation: flip-in-x var(--duration-medium-4) var(--ease-out);
 }
 @utility animate-flip-out-x {
-  animation: flip-out-x var(--duration-medium-2) var(--easing-emphasized-accelerate);
+  animation: flip-out-x var(--duration-medium-2) var(--ease-out);
 }
 @utility animate-flip-in-y {
-  animation: flip-in-y var(--duration-medium-4) var(--easing-emphasized-decelerate);
+  animation: flip-in-y var(--duration-medium-4) var(--ease-out);
 }
 @utility animate-flip-out-y {
-  animation: flip-out-y var(--duration-medium-2) var(--easing-emphasized-accelerate);
+  animation: flip-out-y var(--duration-medium-2) var(--ease-out);
 }
 
 /* Rotate */
@@ -146,13 +140,13 @@
   animation: shimmer var(--duration-extra-long-4) var(--easing-linear) infinite;
 }
 @utility animate-pulse {
-  animation: pulse var(--duration-extra-long-1) var(--easing-standard) infinite;
+  animation: pulse var(--duration-extra-long-1) var(--ease-out) infinite;
 }
 @utility animate-shake {
-  animation: shake var(--duration-long-2) var(--easing-standard);
+  animation: shake var(--duration-long-2) var(--ease-out);
 }
 @utility animate-wiggle {
-  animation: wiggle var(--duration-long-2) var(--easing-standard);
+  animation: wiggle var(--duration-long-2) var(--ease-out);
 }
 
 /* FADE ANIMATIONS */
@@ -201,7 +195,7 @@
 @keyframes scale-up-in {
   from {
     opacity: 0;
-    transform: scale(0.8);
+    transform: scale(0.9);
   }
   to {
     opacity: 1;
@@ -216,7 +210,7 @@
   }
   to {
     opacity: 0;
-    transform: scale(0.8);
+    transform: scale(0.9);
   }
 }
 
@@ -388,7 +382,7 @@
 @keyframes zoom-in {
   from {
     opacity: 0;
-    transform: scale(0.5);
+    transform: scale(0.9);
   }
   to {
     opacity: 1;
@@ -403,7 +397,7 @@
   }
   to {
     opacity: 0;
-    transform: scale(0.5);
+    transform: scale(0.9);
   }
 }
 
@@ -411,13 +405,13 @@
 @keyframes bounce-in {
   0% {
     opacity: 0;
-    transform: scale(0.3);
+    transform: scale(0.9);
   }
   50% {
     transform: scale(1.05);
   }
   70% {
-    transform: scale(0.9);
+    transform: scale(0.98);
   }
   100% {
     opacity: 1;
@@ -430,15 +424,15 @@
     transform: scale(1);
   }
   25% {
-    transform: scale(0.95);
+    transform: scale(0.98);
   }
   50% {
     opacity: 1;
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
   100% {
     opacity: 0;
-    transform: scale(0.3);
+    transform: scale(0.9);
   }
 }
 

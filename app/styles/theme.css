@@ -1,4 +1,9 @@
 :root {
+  /* Emil-approved custom curves */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+
   --md-sys-color-primary: rgb(141 79 13);
   --md-sys-color-surface-tint: rgb(141 79 13);
   --md-sys-color-on-primary: rgb(255 255 255);
@@ -48,6 +53,36 @@
   --md-sys-color-surface-container: rgb(250 235 226);
   --md-sys-color-surface-container-high: rgb(244 229 221);
   --md-sys-color-surface-container-highest: rgb(238 224 215);
+
+  /* Duration Tokens */
+  --duration-short-1: 50ms;
+  --duration-short-2: 100ms;
+  --duration-short-3: 150ms;
+  --duration-short-4: 200ms;
+  --duration-medium-1: 250ms;
+  --duration-medium-2: 300ms;
+  --duration-medium-3: 350ms;
+  --duration-medium-4: 400ms;
+  --duration-long-1: 450ms;
+  --duration-long-2: 500ms;
+  --duration-long-3: 550ms;
+  --duration-long-4: 600ms;
+  --duration-extra-long-1: 700ms;
+  --duration-extra-long-2: 800ms;
+  --duration-extra-long-3: 900ms;
+  --duration-extra-long-4: 1000ms;
+
+  /* Easing Tokens */
+  --easing-linear: cubic-bezier(0, 0, 1, 1);
+  --easing-standard: var(--ease-in-out);
+  --easing-standard-accelerate: cubic-bezier(0.3, 0, 1, 1);
+  --easing-standard-decelerate: var(--ease-out);
+  --easing-emphasized: var(--ease-in-out);
+  --easing-emphasized-accelerate: cubic-bezier(0.3, 0, 0.8, 0.15);
+  --easing-emphasized-decelerate: var(--ease-out);
+  --easing-legacy: cubic-bezier(0.4, 0, 0.2, 1);
+  --easing-legacy-accelerate: cubic-bezier(0.4, 0, 1, 1);
+  --easing-legacy-decelerate: cubic-bezier(0, 0, 0.2, 1);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -102,38 +137,6 @@
     --md-sys-color-surface-container-high: rgb(48 40 35);
     --md-sys-color-surface-container-highest: rgb(59 51 45);
   }
-}
-
-:root {
-  /* Duration Tokens */
-  --duration-short-1: 50ms;
-  --duration-short-2: 100ms;
-  --duration-short-3: 150ms;
-  --duration-short-4: 200ms;
-  --duration-medium-1: 250ms;
-  --duration-medium-2: 300ms;
-  --duration-medium-3: 350ms;
-  --duration-medium-4: 400ms;
-  --duration-long-1: 450ms;
-  --duration-long-2: 500ms;
-  --duration-long-3: 550ms;
-  --duration-long-4: 600ms;
-  --duration-extra-long-1: 700ms;
-  --duration-extra-long-2: 800ms;
-  --duration-extra-long-3: 900ms;
-  --duration-extra-long-4: 1000ms;
-
-  /* Easing Tokens */
-  --easing-linear: cubic-bezier(0, 0, 1, 1);
-  --easing-standard: cubic-bezier(0.2, 0, 0, 1);
-  --easing-standard-accelerate: cubic-bezier(0.3, 0, 1, 1);
-  --easing-standard-decelerate: cubic-bezier(0, 0, 0, 1);
-  --easing-emphasized: cubic-bezier(0.2, 0, 0, 1);
-  --easing-emphasized-accelerate: cubic-bezier(0.3, 0, 0.8, 0.15);
-  --easing-emphasized-decelerate: cubic-bezier(0.05, 0.7, 0.1, 1);
-  --easing-legacy: cubic-bezier(0.4, 0, 0.2, 1);
-  --easing-legacy-accelerate: cubic-bezier(0.4, 0, 1, 1);
-  --easing-legacy-decelerate: cubic-bezier(0, 0, 0.2, 1);
 }
 
 ::view-transition-old(root),
