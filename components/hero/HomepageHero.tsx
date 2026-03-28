@@ -19,11 +19,13 @@ export function HomepageHero() {
   return (
     <header className="container container-grid py-container-block-sm md:py-container-block gap-y-12">
       <article className="col-span-full flex-center-col gap-y-3">
-        <h1 className="font-display text-heading-medium text-primary capitalize md:text-heading-large max-w-[50ch] text-center">
+        <h1 className="font-display text-heading-medium text-primary capitalize md:text-heading-large max-w-[50ch] text-center animate-reveal">
           {data.title}
         </h1>
-        <p className="max-w-[65ch] text-center text-sm">{data.description}</p>
-        <div className="flex-row-start items-center mt-2">
+        <p className="max-w-[65ch] text-center text-sm animate-reveal delay-1">
+          {data.description}
+        </p>
+        <div className="flex-row-start items-center mt-2 animate-reveal delay-2">
           {data.cta.map((cta, index) => (
             <Link key={index} href={cta.href} variant="primary">
               <span>{cta.label}</span>
@@ -33,7 +35,7 @@ export function HomepageHero() {
         </div>
       </article>
 
-      <div className="col-span-full flex-center-col">
+      <div className="col-span-full flex-center-col animate-reveal delay-3">
         <Image
           src={data.image}
           width={1000}

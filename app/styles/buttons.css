@@ -1,10 +1,15 @@
 @reference "tailwindcss";
 
 @utility btn {
-  @apply relative flex-row-center items-center font-medium text-sm tracking-[0.00625rem] rounded-4xl min-w-[4.7rem] w-fit min-h-11 h-fit cursor-pointer select-none whitespace-nowrap duration-200 ease-in-out leading-1;
+  @apply relative flex-row-center items-center font-medium text-sm tracking-[0.00625rem] rounded-4xl min-w-[4.7rem] w-fit min-h-11 h-fit cursor-pointer select-none whitespace-nowrap leading-1;
+  transition:
+    transform 160ms var(--ease-out),
+    background-color 200ms ease,
+    box-shadow 200ms ease,
+    opacity 200ms ease;
 
   &:active {
-    @apply scale-98;
+    @apply scale-97;
   }
 
   &:disabled {
@@ -19,8 +24,11 @@
 @utility btn-icon-base {
   @apply inline-flex items-center justify-center
            p-2 text-2xl rounded-full
-           cursor-pointer select-none size-10
-           duration-200 ease-in-out;
+           cursor-pointer select-none size-10;
+  transition:
+    transform 160ms var(--ease-out),
+    background-color 200ms ease,
+    opacity 200ms ease;
 
   &:active {
     @apply scale-95;
