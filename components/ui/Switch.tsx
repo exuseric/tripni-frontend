@@ -10,7 +10,7 @@ export interface SwitchProps extends Omit<AriaSwitchProps, "children"> {
 
 const track = tv({
   extend: focusRing,
-  base: "flex h-5 w-9 box-border px-px items-center shrink-0 cursor-default rounded-full transition duration-200 ease-in-out shadow-inner border border-transparent font-sans",
+  base: "flex h-5 w-9 box-border px-px items-center shrink-0 cursor-default rounded-full transition duration-150 var(--ease-out) shadow-inner border border-transparent font-sans",
   variants: {
     isSelected: {
       false:
@@ -24,7 +24,7 @@ const track = tv({
 });
 
 const handle = tv({
-  base: "h-4 w-4 transform rounded-full outline outline-1 -outline-offset-1 outline-transparent shadow-xs transition duration-200 ease-in-out",
+  base: "h-4 w-4 transform rounded-full outline outline-1 -outline-offset-1 outline-transparent shadow-xs transition duration-150 var(--ease-out) group-pressed:scale-90",
   variants: {
     isSelected: {
       false: "translate-x-0 bg-on-surface",

@@ -72,8 +72,9 @@ export function Column(props: ColumnProps) {
             <span className="truncate">{children}</span>
             {allowsSorting && (
               <span
-                className={`w-4 h-4 flex items-center justify-center transition ${sortDirection === "descending" ? "rotate-180" : ""
-                  }`}
+                className={`w-4 h-4 flex items-center justify-center transition ${
+                  sortDirection === "descending" ? "rotate-180" : ""
+                }`}
               >
                 {sortDirection && (
                   <ArrowUp

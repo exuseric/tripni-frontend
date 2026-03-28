@@ -6,7 +6,7 @@ import {
   ColorAreaProps as AriaColorAreaProps,
 } from "react-aria-components";
 
-export interface ColorAreaProps extends AriaColorAreaProps { }
+export interface ColorAreaProps extends AriaColorAreaProps {}
 
 export function ColorArea(props: ColorAreaProps) {
   return (

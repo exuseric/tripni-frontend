@@ -208,11 +208,13 @@ button {
 
 /*Container Grids*/
 @utility small-screen-grid {
-  @apply grid grid-cols-[repeat(4,minmax(4.4rem,6rem))] auto-rows-max gap-4;
+  --ss-cols: repeat(4, minmax(4.4rem, 6rem));
+  @apply grid grid-cols-(--ss-cols) auto-rows-max gap-4;
 }
 
 @utility large-screen-grid {
-  @apply grid grid-cols-[repeat(12,minmax(4.4rem,5.25rem))] auto-rows-max gap-6;
+  --ls-cols: repeat(12, minmax(4.4rem, 5.25rem));
+  @apply grid grid-cols-(--ls-cols) auto-rows-max gap-6;
 }
 
 /* Flexbox Row Utilities */
@@ -292,10 +294,25 @@ button {
   * {
     @apply border-outline-variant outline-primary/50;
   }
+
   body {
     @apply bg-surface text-on-surface;
   }
+
   html {
     @apply font-mono;
   }
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: var(--duration-short-4);
+}
+
+::view-transition-old(root) {
+  animation: fade-out var(--duration-short-4) var(--easing-standard-accelerate);
+}
+
+::view-transition-new(root) {
+  animation: fade-in var(--duration-medium-2) var(--easing-standard-decelerate);
 }

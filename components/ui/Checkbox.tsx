@@ -57,9 +57,9 @@ export function Checkbox(props: CheckboxProps) {
               className={boxStyles({ isSelected: isSelected || isIndeterminate, ...renderProps })}
             >
               {isIndeterminate ? (
-                <Minus aria-hidden className={iconStyles} />
+                <Minus aria-hidden className={twMerge(iconStyles, "animate-in zoom-in-50 duration-150")} />
               ) : isSelected ? (
-                <Check aria-hidden className={iconStyles} />
+                <Check aria-hidden className={twMerge(iconStyles, "animate-in zoom-in-50 duration-150")} />
               ) : null}
             </div>
             {children}

@@ -19,7 +19,7 @@ import { tv } from "tailwind-variants";
 
 const cellStyles = tv({
   extend: focusRing,
-  base: "w-[calc(100cqw/7)] aspect-square text-sm cursor-default rounded-full flex items-center justify-center forced-color-adjust-none [-webkit-tap-highlight-color:transparent]",
+  base: "w-[calc(100cqw/7)] aspect-square text-sm cursor-default rounded-full flex items-center justify-center transition forced-color-adjust-none [-webkit-tap-highlight-color:transparent] pressed:scale-90",
   variants: {
     isSelected: {
       false: "text-on-surface hover:bg-surface-container-high pressed:bg-surface-container-highest",

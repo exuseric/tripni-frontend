@@ -18,10 +18,10 @@ const modalStyles = tv({
   base: "font-sans w-full max-w-[min(90vw,450px)] max-h-[calc(var(--visual-viewport-height)*.9)] rounded-2xl bg-surface-container forced-colors:bg-[Canvas] text-left align-middle text-on-surface shadow-2xl bg-clip-padding border border-outline-variant",
   variants: {
     isEntering: {
-      true: "animate-in zoom-in-105 ease-out duration-200",
+      true: "animate-in fade-in zoom-in-95 ease-out duration-200",
     },
     isExiting: {
-      true: "animate-out zoom-out-95 ease-in duration-200",
+      true: "animate-out fade-out zoom-out-95 ease-in duration-200",
     },
   },
 });

@@ -138,16 +138,3 @@
     --md-sys-color-surface-container-highest: rgb(59 51 45);
   }
 }
-
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation-duration: var(--duration-short-4);
-}
-
-::view-transition-old(root) {
-  animation: fade-out var(--duration-short-4) var(--easing-standard-accelerate);
-}
-
-::view-transition-new(root) {
-  animation: fade-in var(--duration-medium-2) var(--easing-standard-decelerate);
-}

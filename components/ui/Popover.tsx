@@ -17,10 +17,10 @@ const styles = tv({
   base: "font-sans bg-surface-container forced-colors:bg-[Canvas] shadow-2xl rounded-xl bg-clip-padding border border-outline-variant text-on-surface outline-0",
   variants: {
     isEntering: {
-      true: "animate-in fade-in placement-bottom:slide-in-from-top-1 placement-top:slide-in-from-bottom-1 placement-left:slide-in-from-right-1 placement-right:slide-in-from-left-1 ease-out duration-200",
+      true: "animate-in fade-in zoom-in-95 placement-bottom:slide-in-from-top-1 placement-top:slide-in-from-bottom-1 placement-left:slide-in-from-right-1 placement-right:slide-in-from-left-1 ease-out duration-200",
     },
     isExiting: {
-      true: "animate-out fade-out placement-bottom:slide-out-to-top-1 placement-top:slide-out-to-bottom-1 placement-left:slide-out-to-right-1 placement-right:slide-out-to-left-1 ease-in duration-150",
+      true: "animate-out fade-out zoom-out-95 placement-bottom:slide-out-to-top-1 placement-top:slide-out-to-bottom-1 placement-left:slide-out-to-right-1 placement-right:slide-out-to-left-1 ease-in duration-150",
     },
   },
 });

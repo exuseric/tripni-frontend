@@ -77,7 +77,7 @@ export function DisclosurePanel({ children, ...props }: DisclosurePanelProps) {
       {...props}
       className={composeTailwindRenderProps(
         props.className,
-        "h-(--disclosure-panel-height) motion-safe:transition-[height] overflow-clip",
+        "h-(--disclosure-panel-height) motion-safe:transition-[height] duration-200 var(--ease-out) overflow-clip",
       )}
     >
       <div className="px-4 py-2">{children}</div>
