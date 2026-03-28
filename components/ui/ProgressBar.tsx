@@ -1,11 +1,10 @@
-'use client';
-import React from 'react';
+"use client";
+import { Label } from "@/components/ui/Field";
+import { composeTailwindRenderProps } from "@/lib/react-aria-utils";
 import {
   ProgressBar as AriaProgressBar,
-  ProgressBarProps as AriaProgressBarProps
-} from 'react-aria-components';
-import { Label } from '@/components/ui/Field';
-import { composeTailwindRenderProps } from '@/lib/react-aria-utils';
+  ProgressBarProps as AriaProgressBarProps,
+} from "react-aria-components";
 
 export interface ProgressBarProps extends AriaProgressBarProps {
   label?: string;
@@ -13,15 +12,24 @@ export interface ProgressBarProps extends AriaProgressBarProps {
 
 export function ProgressBar({ label, ...props }: ProgressBarProps) {
   return (
-    <AriaProgressBar {...props} className={composeTailwindRenderProps(props.className, 'flex flex-col gap-2 font-sans w-64 max-w-full')}>
+    <AriaProgressBar
+      {...props}
+      className={composeTailwindRenderProps(
+        props.className,
+        "flex flex-col gap-2 font-sans w-64 max-w-full",
+      )}
+    >
       {({ percentage, valueText, isIndeterminate }) => (
         <>
           <div className="flex justify-between gap-2">
             <Label>{label}</Label>
             <span className="text-sm text-on-surface-variant">{valueText}</span>
           </div>
-          <div className="max-w-full h-2 rounded-full bg-surface-container-high outline outline-1 -outline-offset-1 outline-transparent relative overflow-hidden">
-            <div className={`absolute top-0 h-full rounded-full bg-primary forced-colors:bg-[Highlight] ${isIndeterminate ? 'left-full animate-in duration-1000 slide-in-from-left-[20rem] repeat-infinite ease-out' : 'left-0'}`} style={{ width: (isIndeterminate ? 40 : percentage) + '%' }} />
+          <div className="max-w-full h-2 rounded-full bg-surface-container-high outline-1 -outline-offset-1 outline-transparent relative overflow-hidden">
+            <div
+              className={`absolute top-0 h-full rounded-full bg-primary forced-colors:bg-[Highlight] ${isIndeterminate ? "left-full animate-in duration-1000 slide-in-from-left-[20rem] repeat-infinite ease-out" : "left-0"}`}
+              style={{ width: (isIndeterminate ? 40 : percentage) + "%" }}
+            />
           </div>
         </>
       )}

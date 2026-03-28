@@ -1,11 +1,11 @@
 "use client";
+import React from "react";
 import {
-  OverlayArrow,
   Popover as AriaPopover,
   PopoverProps as AriaPopoverProps,
   composeRenderProps,
+  OverlayArrow,
 } from "react-aria-components";
-import React from "react";
 import { tv } from "tailwind-variants";
 
 export interface PopoverProps extends Omit<AriaPopoverProps, "children"> {
@@ -26,12 +26,14 @@ const styles = tv({
 });
 
 export function Popover({ children, showArrow, className, ...props }: PopoverProps) {
-  let offset = showArrow ? 12 : 8;
+  const offset = showArrow ? 12 : 8;
   return (
     <AriaPopover
       offset={offset}
       {...props}
-      className={composeRenderProps(className, (className, renderProps) => styles({ ...renderProps, className }))}
+      className={composeRenderProps(className, (className, renderProps) =>
+        styles({ ...renderProps, className }),
+      )}
     >
       {showArrow && (
         <OverlayArrow className="group">

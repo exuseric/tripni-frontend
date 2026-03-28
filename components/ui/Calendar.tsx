@@ -1,6 +1,7 @@
-'use client';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import React from 'react';
+"use client";
+import { Button } from "@/components/ui/Button";
+import { composeTailwindRenderProps, focusRing } from "@/lib/react-aria-utils";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import {
   Calendar as AriaCalendar,
   CalendarGridHeader as AriaCalendarGridHeader,
@@ -12,35 +13,40 @@ import {
   DateValue,
   Heading,
   Text,
-  useLocale
-} from 'react-aria-components';
-import { tv } from 'tailwind-variants';
-import { Button } from '@/components/ui/Button';
-import { composeTailwindRenderProps, focusRing } from '@/lib/react-aria-utils';
+  useLocale,
+} from "react-aria-components";
+import { tv } from "tailwind-variants";
 
 const cellStyles = tv({
   extend: focusRing,
-  base: 'w-[calc(100cqw/7)] aspect-square text-sm cursor-default rounded-full flex items-center justify-center forced-color-adjust-none [-webkit-tap-highlight-color:transparent]',
+  base: "w-[calc(100cqw/7)] aspect-square text-sm cursor-default rounded-full flex items-center justify-center forced-color-adjust-none [-webkit-tap-highlight-color:transparent]",
   variants: {
     isSelected: {
-      false: 'text-on-surface hover:bg-surface-container-high pressed:bg-surface-container-highest',
-      true: 'bg-primary invalid:bg-error text-on-primary forced-colors:bg-[Highlight] forced-colors:invalid:bg-[Mark] forced-colors:text-[HighlightText]'
+      false: "text-on-surface hover:bg-surface-container-high pressed:bg-surface-container-highest",
+      true: "bg-primary invalid:bg-error text-on-primary forced-colors:bg-[Highlight] forced-colors:invalid:bg-[Mark] forced-colors:text-[HighlightText]",
     },
     isDisabled: {
-      true: 'text-on-surface/20 forced-colors:text-[GrayText]'
-    }
-  }
+      true: "text-on-surface/20 forced-colors:text-[GrayText]",
+    },
+  },
 });
 
-export interface CalendarProps<T extends DateValue> extends Omit<AriaCalendarProps<T>, 'visibleDuration'> {
+export interface CalendarProps<T extends DateValue> extends Omit<
+  AriaCalendarProps<T>,
+  "visibleDuration"
+> {
   errorMessage?: string;
 }
 
-export function Calendar<T extends DateValue>(
-  { errorMessage, ...props }: CalendarProps<T>
-) {
+export function Calendar<T extends DateValue>({ errorMessage, ...props }: CalendarProps<T>) {
   return (
-    <AriaCalendar {...props} className={composeTailwindRenderProps(props.className, 'flex flex-col font-sans w-[calc(9*var(--spacing)*7)] max-w-full @container')}>
+    <AriaCalendar
+      {...props}
+      className={composeTailwindRenderProps(
+        props.className,
+        "flex flex-col font-sans w-[calc(9*var(--spacing)*7)] max-w-full @container",
+      )}
+    >
       <CalendarHeader />
       <CalendarGrid className="border-spacing-0">
         <CalendarGridHeader />
@@ -48,22 +54,34 @@ export function Calendar<T extends DateValue>(
           {(date) => <CalendarCell date={date} className={cellStyles} />}
         </CalendarGridBody>
       </CalendarGrid>
-      {errorMessage && <Text slot="errorMessage" className="text-sm text-error">{errorMessage}</Text>}
+      {errorMessage && (
+        <Text slot="errorMessage" className="text-sm text-error">
+          {errorMessage}
+        </Text>
+      )}
     </AriaCalendar>
   );
 }
 
 export function CalendarHeader() {
-  let {direction} = useLocale();
+  const { direction } = useLocale();
 
   return (
     <header className="flex items-center gap-1 pb-4 px-1 border-box">
       <Button variant="quiet" slot="previous">
-        {direction === 'rtl' ? <ChevronRight aria-hidden size={18} /> : <ChevronLeft aria-hidden size={18} />}
+        {direction === "rtl" ? (
+          <ChevronRight aria-hidden size={18} />
+        ) : (
+          <ChevronLeft aria-hidden size={18} />
+        )}
       </Button>
       <Heading className="flex-1 font-sans font-semibold [font-variation-settings:normal] text-base text-center mx-2 my-0 text-on-surface" />
       <Button variant="quiet" slot="next">
-        {direction === 'rtl' ? <ChevronLeft aria-hidden size={18} /> : <ChevronRight aria-hidden size={18} />}
+        {direction === "rtl" ? (
+          <ChevronLeft aria-hidden size={18} />
+        ) : (
+          <ChevronRight aria-hidden size={18} />
+        )}
       </Button>
     </header>
   );
@@ -78,5 +96,5 @@ export function CalendarGridHeader() {
         </CalendarHeaderCell>
       )}
     </AriaCalendarGridHeader>
-  )
+  );
 }

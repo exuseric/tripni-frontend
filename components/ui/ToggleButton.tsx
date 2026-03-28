@@ -1,30 +1,34 @@
-'use client';
-import React from 'react';
-import { ToggleButton as RACToggleButton, ToggleButtonProps, composeRenderProps } from 'react-aria-components';
-import { tv } from 'tailwind-variants';
-import { focusRing } from '@/lib/react-aria-utils';
+"use client";
+import { focusRing } from "@/lib/react-aria-utils";
+import {
+  ToggleButton as RACToggleButton,
+  ToggleButtonProps,
+  composeRenderProps,
+} from "react-aria-components";
+import { tv } from "tailwind-variants";
 
-let styles = tv({
+const styles = tv({
   extend: focusRing,
-  base: 'relative inline-flex items-center justify-center gap-2 border border-outline-variant h-9 box-border px-3.5 [&:has(>svg:only-child)]:px-0 [&:has(>svg:only-child)]:h-8 [&:has(>svg:only-child)]:aspect-square font-sans text-sm text-center transition rounded-lg cursor-default forced-color-adjust-none [-webkit-tap-highlight-color:transparent]',
+  base: "relative inline-flex items-center justify-center gap-2 border border-outline-variant h-9 box-border px-3.5 [&:has(>svg:only-child)]:px-0 [&:has(>svg:only-child)]:h-8 [&:has(>svg:only-child)]:aspect-square font-sans text-sm text-center transition rounded-lg cursor-default forced-color-adjust-none [-webkit-tap-highlight-color:transparent]",
   variants: {
     isSelected: {
-      false: 'bg-surface-container-low hover:bg-surface-container-high pressed:bg-surface-container-highest text-on-surface forced-colors:bg-[ButtonFace]! forced-colors:text-[ButtonText]!',
-      true: 'bg-primary hover:bg-primary/90 pressed:bg-primary/80 text-on-primary forced-colors:bg-[Highlight]! forced-colors:text-[HighlightText]!'
+      false:
+        "bg-surface-container-low hover:bg-surface-container-high pressed:bg-surface-container-highest text-on-surface forced-colors:bg-[ButtonFace]! forced-colors:text-[ButtonText]!",
+      true: "bg-primary hover:bg-primary/90 pressed:bg-primary/80 text-on-primary forced-colors:bg-[Highlight]! forced-colors:text-[HighlightText]!",
     },
     isDisabled: {
-      true: 'border-transparent bg-surface-container-low forced-colors:bg-[ButtonFace]! text-on-surface/20 forced-colors:text-[GrayText]!'
-    }
-  }
+      true: "border-transparent bg-surface-container-low forced-colors:bg-[ButtonFace]! text-on-surface/20 forced-colors:text-[GrayText]!",
+    },
+  },
 });
 
 export function ToggleButton(props: ToggleButtonProps) {
   return (
     <RACToggleButton
       {...props}
-      className={composeRenderProps(
-        props.className,
-        (className, renderProps) => styles({...renderProps, className})
-      )} />
+      className={composeRenderProps(props.className, (className, renderProps) =>
+        styles({ ...renderProps, className }),
+      )}
+    />
   );
 }

@@ -1,10 +1,32 @@
-import { defineConfig, globalIgnores } from "eslint/config";
 import nextVitals from "eslint-config-next/core-web-vitals";
 import nextTs from "eslint-config-next/typescript";
+import unusedImports from "eslint-plugin-unused-imports";
+import { defineConfig, globalIgnores } from "eslint/config";
 
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
+  {
+    plugins: {
+      "unused-imports": unusedImports,
+    },
+    rules: {
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": "off",
+      "unused-imports/no-unused-imports": "error",
+      "unused-imports/no-unused-vars": [
+        "warn",
+        {
+          vars: "all",
+          varsIgnorePattern: "^_",
+          args: "after-used",
+          argsIgnorePattern: "^_",
+        },
+      ],
+      "@typescript-eslint/no-empty-object-type": "warn",
+      "@typescript-eslint/no-explicit-any": "warn"
+    },
+  },
   // Override default ignores of eslint-config-next.
   globalIgnores([
     // Default ignores of eslint-config-next:

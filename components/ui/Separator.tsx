@@ -1,25 +1,25 @@
-'use client';
-import React from 'react';
-import { Separator as RACSeparator, SeparatorProps } from 'react-aria-components';
-import { tv } from 'tailwind-variants';
+"use client";
+import { Separator as RACSeparator, SeparatorProps } from "react-aria-components";
+import { tv } from "tailwind-variants";
 
 const styles = tv({
-  base: 'bg-outline-variant forced-colors:bg-[ButtonBorder] border-none',
+  base: "bg-outline-variant forced-colors:bg-[ButtonBorder] border-none",
   variants: {
     orientation: {
-      horizontal: 'h-px w-full',
-      vertical: 'w-px min-h-8 h-full'
-    }
+      horizontal: "h-px w-full",
+      vertical: "w-px min-h-8 h-full",
+    },
   },
   defaultVariants: {
-    orientation: 'horizontal'
-  }
+    orientation: "horizontal",
+  },
 });
 
 export function Separator(props: SeparatorProps) {
   return (
     <RACSeparator
       {...props}
-      className={styles({orientation: props.orientation, className: props.className})} />
+      className={styles({ orientation: props.orientation, className: props.className })}
+    />
   );
 }

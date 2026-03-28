@@ -1,6 +1,10 @@
-'use client';
-import { ChevronDown } from 'lucide-react';
-import React from 'react';
+"use client";
+import { Description, FieldError, Label } from "@/components/ui/Field";
+import { DropdownItem, DropdownSection, DropdownSectionProps } from "@/components/ui/ListBox";
+import { Popover } from "@/components/ui/Popover";
+import { composeTailwindRenderProps, focusRing } from "@/lib/react-aria-utils";
+import { ChevronDown } from "lucide-react";
+import React from "react";
 import {
   Select as AriaSelect,
   SelectProps as AriaSelectProps,
@@ -8,26 +12,26 @@ import {
   ListBox,
   ListBoxItemProps,
   SelectValue,
-  ValidationResult
-} from 'react-aria-components';
-import { tv } from 'tailwind-variants';
-import { Description, FieldError, Label } from '@/components/ui/Field';
-import { DropdownItem, DropdownSection, DropdownSectionProps } from '@/components/ui/ListBox';
-import { Popover } from '@/components/ui/Popover';
-import { composeTailwindRenderProps, focusRing } from '@/lib/react-aria-utils';
+  ValidationResult,
+} from "react-aria-components";
+import { tv } from "tailwind-variants";
 
 const styles = tv({
   extend: focusRing,
-  base: 'flex items-center text-start gap-4 w-full font-sans border border-outline-variant cursor-default rounded-lg pl-3 pr-2 h-9 min-w-[180px] transition bg-surface-container-low [-webkit-tap-highlight-color:transparent]',
+  base: "flex items-center text-start gap-4 w-full font-sans border border-outline-variant cursor-default rounded-lg pl-3 pr-2 h-9 min-w-[180px] transition bg-surface-container-low [-webkit-tap-highlight-color:transparent]",
   variants: {
     isDisabled: {
-      false: 'text-on-surface hover:bg-surface-container-high pressed:bg-surface-container-highest group-invalid:outline group-invalid:outline-error forced-colors:group-invalid:outline-[Mark]',
-      true: 'border-transparent text-on-surface/20 forced-colors:text-[GrayText] bg-surface-container-low'
-    }
-  }
+      false:
+        "text-on-surface hover:bg-surface-container-high pressed:bg-surface-container-highest group-invalid:outline group-invalid:outline-error forced-colors:group-invalid:outline-[Mark]",
+      true: "border-transparent text-on-surface/20 forced-colors:text-[GrayText] bg-surface-container-low",
+    },
+  },
 });
 
-export interface SelectProps<T extends object, M extends 'single' | 'multiple'> extends Omit<AriaSelectProps<T, M>, 'children'> {
+export interface SelectProps<T extends object, M extends "single" | "multiple"> extends Omit<
+  AriaSelectProps<T, M>,
+  "children"
+> {
   label?: string;
   description?: string;
   errorMessage?: string | ((validation: ValidationResult) => string);
@@ -35,22 +39,39 @@ export interface SelectProps<T extends object, M extends 'single' | 'multiple'> 
   children: React.ReactNode | ((item: T) => React.ReactNode);
 }
 
-export function Select<T extends object, M extends 'single' | 'multiple' = 'single'>(
-  { label, description, errorMessage, children, items, ...props }: SelectProps<T, M>
-) {
+export function Select<T extends object, M extends "single" | "multiple" = "single">({
+  label,
+  description,
+  errorMessage,
+  children,
+  items,
+  ...props
+}: SelectProps<T, M>) {
   return (
-    <AriaSelect {...props} className={composeTailwindRenderProps(props.className, 'group flex flex-col gap-1 relative font-sans')}>
+    <AriaSelect
+      {...props}
+      className={composeTailwindRenderProps(
+        props.className,
+        "group flex flex-col gap-1 relative font-sans",
+      )}
+    >
       {label && <Label>{label}</Label>}
       <Button className={styles}>
         <SelectValue className="flex-1 text-sm">
-          {({selectedText, defaultChildren}) => selectedText || defaultChildren}
+          {({ selectedText, defaultChildren }) => selectedText || defaultChildren}
         </SelectValue>
-        <ChevronDown aria-hidden className="w-4 h-4 text-on-surface-variant forced-colors:text-[ButtonText] group-disabled:text-on-surface/20 forced-colors:group-disabled:text-[GrayText]" />
+        <ChevronDown
+          aria-hidden
+          className="w-4 h-4 text-on-surface-variant forced-colors:text-[ButtonText] group-disabled:text-on-surface/20 forced-colors:group-disabled:text-[GrayText]"
+        />
       </Button>
       {description && <Description>{description}</Description>}
       <FieldError>{errorMessage}</FieldError>
       <Popover className="min-w-(--trigger-width)">
-        <ListBox items={items} className="outline-hidden box-border p-1 max-h-[inherit] overflow-auto [clip-path:inset(0_0_0_0_round_.75rem)]">
+        <ListBox
+          items={items}
+          className="outline-hidden box-border p-1 max-h-[inherit] overflow-auto [clip-path:inset(0_0_0_0_round_.75rem)]"
+        >
           {children}
         </ListBox>
       </Popover>

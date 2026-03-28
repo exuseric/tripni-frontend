@@ -1,10 +1,10 @@
 "use client";
-import React from "react";
+import { focusRing } from "@/lib/react-aria-utils";
 import {
   Tab as RACTab,
   TabList as RACTabList,
-  TabPanels as RACTabPanels,
   TabPanel as RACTabPanel,
+  TabPanels as RACTabPanels,
   Tabs as RACTabs,
   SelectionIndicator,
   TabListProps,
@@ -14,9 +14,8 @@ import {
   TabsProps,
   composeRenderProps,
 } from "react-aria-components";
-import { tv } from "tailwind-variants";
-import { focusRing } from "@/lib/react-aria-utils";
 import { twMerge } from "tailwind-merge";
+import { tv } from "tailwind-variants";
 
 const tabsStyles = tv({
   base: "flex gap-4 font-sans max-w-full",
@@ -40,8 +39,9 @@ export function Tabs(props: TabsProps) {
 }
 
 const tabListStyles = tv({
-  base: "flex max-w-full bg-surface-container w-fit rounded-full p-1 border border-outline/20 -m-1" +
-      " overflow-x-auto overflow-y-clip [scrollbar-width:none]",
+  base:
+    "flex max-w-full bg-surface-container w-fit rounded-full p-1 border border-outline/20 -m-1" +
+    " overflow-x-auto overflow-y-clip [scrollbar-width:none]",
   variants: {
     orientation: {
       horizontal: "flex-row gap-x-1",
@@ -63,10 +63,11 @@ export function TabList<T extends object>(props: TabListProps<T>) {
 
 const tabProps = tv({
   extend: focusRing,
-  base: "group isolate relative flex items-center cursor-default rounded-full px-3 py-1.5 text-sm font-medium" +
-      " transition" +
-      " forced-color-adjust-none [-webkit-tap-highlight-color:transparent] text-on-surface-variant cursor-pointer" +
-      " hover:bg-primary-fixed hover:text-on-primary-fixed",
+  base:
+    "group isolate relative flex items-center cursor-default rounded-full px-3 py-1.5 text-sm font-medium" +
+    " transition" +
+    " forced-color-adjust-none [-webkit-tap-highlight-color:transparent] text-on-surface-variant cursor-pointer" +
+    " hover:bg-primary-fixed hover:text-on-primary-fixed",
   variants: {
     isDisabled: {
       true: "text-on-surface-variant/20 forced-colors:text-[GrayText]",
